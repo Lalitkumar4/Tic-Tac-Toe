@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 7rem;
+  font-size: 3rem;
+}
+/* Gameboard */
+.gameboard {
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Square */
+.square {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 2px solid black;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.square:first-child,
+.square:nth-child(2),
+.square:nth-child(3) {
+  border-top: none;
+}
+
+.square:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.square:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.square:last-child,
+.square:nth-child(8),
+.square:nth-child(7) {
+  border-bottom: none;
+}
+
+/* Circle */
+.circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 15px solid rgb(118, 92, 235);
+  box-sizing: border-box;
+}
+
+/* Cross */
+.cross {
+  height: 80px;
+  width: 80px;
+  position: relative;
+  transform: rotate(45deg);
+}
+
+.cross::before,
+.cross::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(224, 90, 90);
+  border-radius: 3px;
+}
+
+.cross::before {
+  left: 50%;
+  width: 20%;
+  margin-left: -10%;
+  height: 100%;
+}
+
+.cross::after {
+  top: 50%;
+  height: 20%;
+  margin-top: -10%;
+  width: 100%;
+}
+
+.info {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2rem;
+  margin-top: 1.5rem;
+}
+
+.restart {
+  background-color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 2rem;
+  padding: 5px 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.restart:hover {
+  background-color: black;
+  color: white;
+}
